@@ -15,15 +15,24 @@ It exposes two read-only tools:
 - `demo_docs.json` contains the fake documents the server can query
 - `tests/test_catalog.py` verifies the local search helpers
 
-## Setup
+## Clone And Setup
 
-Create a virtual environment and install the project:
+Clone the repo and move into the project folder:
+
+```powershell
+git clone https://github.com/priyanshukmsci/demo_mcp.git
+cd demo_mcp
+```
+
+Then create or refresh the virtual environment and install the project:
 
 ```powershell
 py -m venv .venv
 .venv\Scripts\Activate.ps1
 py -m pip install -e .
 ```
+
+If you already cloned the repo earlier, open the repo folder first and then run the virtual environment and install commands again so your environment stays up to date.
 
 Claude Desktop will launch the server for you over `stdio`, so you do not need to start `server.py` manually during normal use.
 
