@@ -1,0 +1,48 @@
+[
+  {
+    "id": "product-overview",
+    "title": "Bluepine Workspace Overview",
+    "url": "https://demo.example.com/docs/product-overview",
+    "category": "guide",
+    "updated_at": "2026-03-01",
+    "tags": ["product", "workspace", "overview", "automation"],
+    "text": "Bluepine Workspace is a fictional operations platform for small service teams. The product combines scheduling, job notes, customer messaging, and lightweight reporting in one web app. Customers usually start with shared inbox, weekly planning, and post-job summaries before expanding into templates and analytics."
+  },
+  {
+    "id": "pricing",
+    "title": "Bluepine Workspace Pricing",
+    "url": "https://demo.example.com/docs/pricing",
+    "category": "policy",
+    "updated_at": "2026-02-15",
+    "tags": ["pricing", "plans", "billing", "seats"],
+    "text": "Bluepine Workspace has three fictional plans. Starter costs 19 dollars per seat each month, Growth costs 49 dollars per seat each month, and Scale uses annual custom pricing. The Growth plan adds automation rules, API access, and audit history. Annual billing includes a 10 percent discount for Starter and Growth."
+  },
+  {
+    "id": "security",
+    "title": "Bluepine Security Notes",
+    "url": "https://demo.example.com/docs/security",
+    "category": "policy",
+    "updated_at": "2026-02-20",
+    "tags": ["security", "encryption", "sso", "retention"],
+    "text": "This fictional demo policy says Bluepine encrypts data in transit and at rest. Single sign-on is available on the Scale plan. Customer data is retained until the workspace owner deletes it, and backups are cycled every 30 days. Sensitive actions such as exporting reports are logged in the audit trail."
+  },
+  {
+    "id": "support",
+    "title": "Bluepine Support Playbook",
+    "url": "https://demo.example.com/docs/support",
+    "category": "guide",
+    "updated_at": "2026-03-05",
+    "tags": ["support", "sla", "response times", "help"],
+    "text": "Starter customers receive email support during business hours. Growth customers receive same-day support for urgent issues and standard onboarding help. Scale customers receive a named success contact and a two-hour response target for critical incidents. The demo support team asks for workspace id, affected users, and screenshots when opening an issue."
+  },
+  {
+    "id": "roadmap",
+    "title": "Bluepine Q2 Roadmap Snapshot",
+    "url": "https://demo.example.com/docs/roadmap",
+    "category": "internal",
+    "updated_at": "2026-03-10",
+    "tags": ["roadmap", "q2", "mobile", "reporting"],
+    "text": "The fictional Q2 roadmap focuses on faster mobile job checklists, richer saved reports, and better template sharing between teams. The product team is also evaluating AI-generated job summaries, but that item is still in discovery and is not committed. Reporting export improvements are expected earlier than mobile offline support."
+  }
+]
+

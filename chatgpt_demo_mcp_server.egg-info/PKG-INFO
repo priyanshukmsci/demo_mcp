@@ -1,0 +1,93 @@
+Metadata-Version: 2.4
+Name: chatgpt-demo-mcp-server
+Version: 0.1.0
+Summary: Demo MCP server with search and fetch tools for testing with ChatGPT.
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: mcp[cli]
+
+# ChatGPT Demo MCP Server
+
+This repo contains a tiny Python MCP server you can expose to ChatGPT for end-to-end testing.
+
+It exposes two read-only tools:
+
+- `search(query, limit=5)` returns JSON with `results`, where each result includes `id`, `title`, and `url`
+- `fetch(id)` returns the full document text and metadata for one result from `search`
+
+The tool shapes follow the `search` and `fetch` pattern OpenAI documents for remote MCP servers used by ChatGPT and deep research workflows.
+
+## Files
+
+- `server.py` runs the MCP server
+- `catalog.py` loads the demo knowledge base and handles search/fetch logic
+- `demo_docs.json` contains the fake documents ChatGPT can query
+- `tests/test_catalog.py` verifies the local search helpers
+
+## Setup
+
+Create a virtual environment and install the project:
+
+```powershell
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+py -m pip install -e .
+```
+
+You can also install the dependency directly if you do not want editable mode:
+
+```powershell
+py -m pip install "mcp[cli]"
+```
+
+## Run The Server
+
+For ChatGPT, use Streamable HTTP:
+
+```powershell
+py server.py --transport streamable-http --port 8000
+```
+
+The default MCP endpoint should be:
+
+```text
+http://127.0.0.1:8000/mcp
+```
+
+You can also try the inspector locally:
+
+```powershell
+py -m mcp dev server.py
+```
+
+## Expose It To ChatGPT
+
+ChatGPT needs a public URL for a remote MCP server. The simplest option is a tunnel:
+
+```powershell
+ngrok http 8000
+```
+
+Use the public HTTPS URL from your tunnel and append `/mcp`, for example:
+
+```text
+https://abc123.ngrok-free.app/mcp
+```
+
+Then connect that URL in ChatGPT developer mode.
+
+## Example Prompts
+
+Once the server is connected, try:
+
+- `Search Bluepine pricing and summarize the plans.`
+- `Find the security policy and tell me about retention.`
+- `What is on the Bluepine roadmap and which items are not committed?`
+
+## Test The Helper Logic
+
+These tests do not require the MCP package:
+
+```powershell
+py -m unittest
+```

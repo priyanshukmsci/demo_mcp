@@ -1,0 +1,18 @@
+{
+  "servers": {
+    "demoMcp": {
+      "type": "stdio",
+      "command": "py",
+      "cwd": "${workspaceFolder}",
+      "args": [
+        "server.py",
+        "--transport",
+        "stdio"
+      ],
+      "dev": {
+        "watch": "**/*.py"
+      }
+    }
+  }
+}
+
